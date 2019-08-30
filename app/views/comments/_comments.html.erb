@@ -1,0 +1,13 @@
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+  <div class="card-footer">
+    <p class="card card-body bg-light">
+      <strong><%= comment.username %>:</strong>
+      <%= comment.body %>
+      <%= link_to '❌', [comment.post, comment],
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'},
+                    :class => 'btn btn-secondary btn-sm', :style => "width: 3%"%>
+    </p>
+    </div>
+<% end %>
