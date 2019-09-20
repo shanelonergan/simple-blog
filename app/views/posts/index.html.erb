@@ -1,13 +1,18 @@
 <h1>Blog Posts</h1>
-<% @posts.each do |post| %>
-  <div class="card card-body bg-light">
-    <div class="card-header">
-    <h4><%= post.title %></h4>
-  </div>
-  <div class="card-body">
-    <p class="card-text"><%= post.body %></p>
-    <%= link_to "Read More", post_path(post), :class => 'btn btn-secondary' %>
-  </div>
-  </div>
-  <br>
-<% end %>
+
+<head><%= stylesheet_link_tag "application", :media => "all" %></head>
+
+<div class="box sidebar">
+  <% @posts.each do |post| %>
+    <div class="card card-body bg-light">
+      <div class="card-header">
+      <h4><%= post.title %></h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= post.body %></p>
+      <%= link_to "Read More", post_path(post), :class => 'btn btn-secondary' %>
+    </div>
+    </div>
+    <br>
+  <% end %>
+</div>
